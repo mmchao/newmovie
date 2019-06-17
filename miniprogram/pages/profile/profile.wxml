@@ -1,0 +1,28 @@
+<view class='page'>
+<view class='profile'>
+  <view class='user'>
+    <open-data type="userAvatarUrl" class="avatar"></open-data>
+    <open-data lang="zh_CN" type="userNickName" class="info"></open-data>
+  </view>
+</view>
+<view class='scroll' wx:if="{{myLikes.length > 0}}">
+  <view class='head'>我想看的电影</view>
+  <scroll-view scroll-x>
+    <view class='item' wx:for="{{myLikes}}" wx:key="{{index}}" bindtap='gotoDetail'data-movieid="{{item.id}}">
+      <image src='{{item.images.large}}'></image>
+      <view class='name'>{{item.title}}</view>
+    </view>
+  </scroll-view>
+</view>
+<view class='line' wx:if="{{myLikes.length > 0 && myComments.length > 0}}"></view>
+<view class='no-movie' wx:if="{{myLikes.length == 0&&myComments.length == 0}}">还没有收藏任何电影~~</view>
+<view class='scroll' wx:if="{{myComments.length > 0}}">
+<view class='head'>我看过的电影</view>
+  <scroll-view scroll-x>
+    <view class='item' wx:for="{{myComments}}" wx:key="{{index}}" bindtap='gotoDetail' data-movieid="{{item.id}}">
+      <image src='{{item.images.large}}'></image>
+      <view class='name'>{{item.title}}</view>
+    </view>
+  </scroll-view>
+</view>
+</view>

@@ -1,0 +1,32 @@
+.movie{
+  width: 226rpx;
+  margin-top: 30rpx;
+}
+
+.movie .img{
+  height: 310rpx;
+  width: 100%;
+  border-radius: 15rpx;
+}
+
+.movie .info{
+  font-size: 24rpx;
+  display: flex;
+  
+}
+
+/* 超出部分显示省略号 */
+.title{
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+  font-weight: bold
+}
+
+.score{
+  width: 40rpx;
+  color: #faaf00;
+  text-align: right;
+  font-weight: bolder;
+}

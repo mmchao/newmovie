@@ -1,0 +1,131 @@
+page{
+  color: #fff
+}
+
+.detail-container{
+  position: fixed;
+  /* 高度还是窗口的高度 但是不会随滚动条滚动 absolute会随滚动条滚动 导致页面下方空白 */
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  filter: blur(40rpx);
+  opacity: .4;
+}
+
+.detail-mask{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.detail{
+  display: flex;
+  width: 100%;
+}
+
+.detail .img{
+  width: 250rpx;
+  height: 360rpx; 
+  margin: 20rpx;
+  border-radius: 15rpx;
+}
+
+.detail .info{
+  flex: 1;
+  margin: 20rpx 20rpx 20rpx 0;
+  font-size: 24rpx;
+}
+
+.detail .info .nm{
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+.detail .info .onm{
+  font-size: 30rpx;
+  font-weight: bolder;
+  margin-top: 10rpx;
+}
+
+.detail .info .sc{
+  margin-top: 20rpx;
+  color: #fc0;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.detail .info .tag{
+  margin: 20rpx 0;
+}
+
+.button{
+  display: flex;
+  margin-top: 20rpx
+}
+
+.button button{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: rgb(110, 103, 103);
+  flex: 1;
+}
+
+van-icon{
+  vertical-align: middle;
+}
+
+.button .first{
+  margin-right: 20rpx;
+}
+
+.button-seen{
+  margin-top: 20rpx;
+  font-weight: bolder;
+  font-size: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: rgb(218, 218, 218);
+  background-color: rgba(255, 255, 255, 0.219)
+}
+
+.summary{
+  padding: 20rpx;
+}
+.summary .tl{
+  font-size: 30rpx;
+  font-weight: bolder;
+  padding-bottom: 20rpx;
+}
+.summary .dt{
+  font-size: 24rpx;
+}
+
+.casts .tl{
+  font-size: 30rpx;
+  font-weight: bolder;
+  padding: 20rpx;
+}
+.casts .dt{
+  width: 162.5rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.casts .dt .img{
+  width: 100%;
+  height: 220rpx;
+  border-radius: 10rpx;
+}
+
+.casts .dt .nm{
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+}

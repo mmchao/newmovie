@@ -1,0 +1,10 @@
+<wxs module="Fixed" src="../../fix.wxs"></wxs>
+<view class='container'>
+<view class="movie" wx:for="{{movieList}}" wx:key="{{index}}" bindtap='gotoDetail' data-movieid="{{item.id}}">
+  <image class='img' src='{{item.images.large}}'></image>
+  <view class='info'>
+    <view class='title'>{{item.title}}</view>
+    <view class='score' wx:if="{{item.rating.average!=0}}">{{Fixed.toFix(item.rating.average)}}</view>
+  </view>
+</view>
+</view>

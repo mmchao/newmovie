@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-rate": "vant-weapp/rate",
+    "van-button": "vant-weapp/button",
+    "van-cell-group":"vant-weapp/cell-group",
+    "van-icon": "vant-weapp/icon"
+  },
+  "navigationBarTitleText": "评价"
+}

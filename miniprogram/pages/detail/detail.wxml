@@ -1,0 +1,40 @@
+<view>
+  <view class='detail-container' style='background: url({{detail.images.large}}) no-repeat top/cover'></view>
+  <view class='detail-mask'></view>
+  <view class='detail'>
+    <image src='{{detail.images.large}}' class='img'></image>
+    <view class='info'>
+      <view class='nm'>{{detail.title}}</view>
+      <view class='onm' wx:if="{{detail.title!=detail.original_title}}">{{detail.original_title}}({{detail.year}})</view>
+      <view class='sc' wx:if="{{detail.rating.average!=0}}">{{detail.rating.average}}</view>
+      <view class='sc' wx:if="{{detail.rating.average==0}}">暂无评分</view>
+      <view class='tag'>{{detail.countries[0]}} / {{detail.genres[0]}} {{detail.genres[1]}} {{detail.genres[2]}} / {{detail.pubdate}} / {{detail.durations[0]}}</view>
+      <view>导演：{{detail.directors[0].name}}</view>
+      <view class='button' wx:if="{{!comment_id}}">
+        <button wx:if="{{!like_id}}" bindtap='toSee' class='first'>
+          <van-icon name="like" /> 想看
+        </button>
+        <button wx:else bindtap='toSee' class='first'>
+          <van-icon name="like" color='rgb(228, 74, 120)' /> 我想看
+        </button>
+        <button bindtap='gotoComment' data-movieid="{{movieId}}" data-moviename="{{detail.title}}">
+          <van-icon name="star" /> 看过
+        </button>
+      </view>
+      <button class='button-seen' wx:else bindtap='gotoComment' data-movieid="{{movieId}}" data-moviename="{{detail.title}}">已看过</button>
+    </view>
+  </view>
+  <view class='summary'>
+    <view class='tl'>剧情简介</view>
+    <view class='dt'>{{detail.summary}}</view>
+  </view>
+  <view class='casts'>
+    <view class='tl'>演员</view>
+    <view class='container'>
+      <view wx:for="{{detail.casts}}" wx:key="{{index}}" class='dt'>
+        <image class='img' src='{{item.avatars.large}}'></image>
+        <view class='nm'>{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+</view>

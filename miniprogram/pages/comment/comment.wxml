@@ -1,0 +1,35 @@
+<view>
+  <view class='head'>
+    <view class='title'>
+      <view bindtap='close'>关闭</view>
+      <view class='nm'>{{movieName}}</view>
+      <view wx:if='{{!comment_id}}' bindtap='submit' style='color: #fc0'>发布</view>
+      <view wx:else>
+        <view wx:if='{{updated}}' bindtap='submit' style='color: #fc0'>更新</view>
+        <view wx:else style='color: #ffe990'>更新</view>
+      </view>
+    </view>
+    <view class='score'>
+      <van-rate size='{{25}}' color='#fc0' allow-half value="{{ score }}" bind:change="onScoreChange" />
+      <view class='hint' wx:if="{{score==0}}">点击星星评分</view>
+      <view class='my-sc' wx:elif="{{ score > 0 && score <= 1 }}"> 很差 </view>
+      <view class='my-sc' wx:elif="{{ score>1 && score<=2 }}">较差</view>
+      <view class='my-sc' wx:elif="{{ score>2 && score<=3 }}">还行</view>
+      <view class='my-sc' wx:elif="{{ score>3 && score<=4 }}">推荐</view>
+      <view class='my-sc' wx:else>力荐</view>
+    </view>
+  </view>
+  <view class='text'>
+    <textarea auto-height value="{{content}}" maxlength='-1' placeholder="写一些评价吧" bindinput="onContentChange" />
+  </view>
+  <view class='img'>
+    <image wx:for="{{images}}" wx:key="{{index}}" src='{{item}}'></image>
+    <image wx:for="{{newImages}}" wx:key="{{index}}" src='{{item}}' bindtap='unchooseImg' data-index="{{index}}"></image>
+  </view>
+  <view class='add-img' bindtap='uploadImg'>
+    <van-icon size='25px' name='photo-o' />
+  </view>
+  <view class='footer'>
+    <view wx:if='{{comment_id}}' bindtap='del'>删除评分</view>
+  </view>
+</view>

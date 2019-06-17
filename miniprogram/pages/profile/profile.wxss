@@ -1,0 +1,71 @@
+.page{
+  padding-bottom: 40rpx; 
+  /* margin在手机上不显示 */
+}
+.profile{
+  background: #42b983;
+  height: 250rpx;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+.user{
+  padding-top: 30rpx
+}
+.avatar{
+  width: 150rpx;
+  height: 150rpx;
+  display: block;
+  /* 块状元素才能设置宽高 默认是行内元素不能设置 但是替换元素可以设置 例如img input 另外 给行内元素添加属性float之后 行内元素也就会生成相应的行内框 也可以设置宽高 */
+  overflow: hidden;
+  border-radius: 50%;
+  margin: auto auto
+}
+.info{
+  font-size: 32rpx;
+  color: #fff;
+  padding: 10rpx;
+}
+.no-movie{
+  margin-top: 40rpx;
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  color: #c7c7c7
+}
+.scroll {
+  white-space: nowrap;
+  margin-top: 40rpx
+}
+.line{
+  margin: 0 30rpx;
+  padding-top: 20rpx;
+  border-bottom: 1px solid #c7c7c7;
+}
+.scroll .head{
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-left: 30rpx;
+  margin-bottom: 20rpx
+}
+
+.scroll .item{
+  display: inline-block;
+  width: 200rpx;
+  margin-right: 20rpx;
+}
+.item:first-child{
+  margin-left: 30rpx
+}
+.name{
+  font-size: 24rpx;
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+}
+image{
+  width: 200rpx;
+  height: 280rpx;
+  border-radius: 15rpx;
+}
